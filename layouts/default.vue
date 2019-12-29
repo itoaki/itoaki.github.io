@@ -3,8 +3,7 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
+      clipped
       app
     >
       <v-list>
@@ -25,8 +24,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
-      :clipped-left="clipped"
-      fixed
+      clipped-left
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
