@@ -1,8 +1,15 @@
 <template>
-  <v-app dark>
+  <v-app>
+    <!-- header -->
+    <v-app-bar clipped-left app>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title v-text="title" />
+    </v-app-bar>
+
+    <!-- sidebar -->
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
+      :mini-variant="minivariant"
       clipped
       app
     >
@@ -21,78 +28,34 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
+        <!-- TODO Collapse sidebar -->
+        <v-list-item @click.stop="minivariant = !minivariant">
+          <v-list-item-action>
+            <v-icon>>></v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Collapse sidebar</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      clipped-left
-      app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        @click.stop="miniVariant = !miniVariant"
-        icon
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        @click.stop="clipped = !clipped"
-        icon
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        @click.stop="fixed = !fixed"
-        icon
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        @click.stop="rightDrawer = !rightDrawer"
-        icon
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <!-- content -->
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
-      <span>&copy; 2019</span>
+    <!-- footer -->
+    <v-footer fixed app>
+      <span>&copy; 2019 itoaki.github.io</span>
     </v-footer>
   </v-app>
 </template>
-
 <script>
 export default {
   data () {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
       items: [
         {
           icon: 'mdi-apps',
@@ -105,10 +68,8 @@ export default {
           to: '/inspire'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      minivariant: false,
+      title: 'itoaki.github.io'
     }
   }
 }
