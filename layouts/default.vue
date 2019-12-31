@@ -10,6 +10,7 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="minivariant"
+      mini-variant-width="50"
       clipped
       app
     >
@@ -26,15 +27,6 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-        <!-- TODO Collapse sidebar -->
-        <v-list-item @click.stop="minivariant = !minivariant">
-          <v-list-item-action>
-            <v-icon>>></v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Collapse sidebar</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -55,22 +47,40 @@
 export default {
   data () {
     return {
+      title: 'itoaki.github.io',
       drawer: false,
+      // TOP Profile
+      // Skill
+      // Contents
+      // Contact
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'TOP',
           to: '/'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Skill',
+          to: '/skill'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Contents',
+          to: '/contents'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Contact',
+          to: '/contact'
         }
-      ],
-      minivariant: false,
-      title: 'itoaki.github.io'
+      ]
     }
   }
 }
 </script>
+<style>
+.listItemBottom {
+  bottom: 0；
+}
+</style>
