@@ -9,8 +9,6 @@
     <!-- sidebar -->
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="minivariant"
-      mini-variant-width="50"
       clipped
       app
     >
