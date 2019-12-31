@@ -24,7 +24,13 @@
       </v-list>
     </v-navigation-drawer>
     <!-- header -->
-    <v-app-bar clipped-left app>
+    <v-app-bar
+      app
+      dark
+      clipped-left
+      height="40px"
+      color="#292961"
+    >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
     </v-app-bar>
@@ -35,7 +41,13 @@
       </v-container>
     </v-content>
     <!-- footer -->
-    <v-footer fixed app>
+    <v-footer
+      app
+      fixed
+      dark
+      height="30px"
+      color="#292961"
+    >
       <span>&copy; 2019 itoaki.github.io</span>
     </v-footer>
   </v-app>
@@ -44,26 +56,26 @@
 export default {
   data () {
     return {
-      title: 'itoaki.github.io',
+      title: 'itoaki.github.io(作成中)',
       drawer: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'TOP',
+          icon: 'mdi-account-card-details-outline',
+          title: 'Profile',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-desktop-mac-dashboard',
           title: 'Skill',
           to: '/skill'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-widgets',
           title: 'Contents',
           to: '/contents'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-account-heart',
           title: 'Contact',
           to: '/contact'
         }
