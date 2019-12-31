@@ -1,11 +1,5 @@
 <template>
   <v-app>
-    <!-- header -->
-    <v-app-bar clipped-left app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
-    </v-app-bar>
-
     <!-- sidebar -->
     <v-navigation-drawer
       v-model="drawer"
@@ -29,6 +23,11 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <!-- header -->
+    <v-app-bar clipped-left app>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title v-text="title" />
+    </v-app-bar>
     <!-- content -->
     <v-content>
       <v-container>
@@ -47,10 +46,6 @@ export default {
     return {
       title: 'itoaki.github.io',
       drawer: false,
-      // TOP Profile
-      // Skill
-      // Contents
-      // Contact
       items: [
         {
           icon: 'mdi-apps',
@@ -77,8 +72,3 @@ export default {
   }
 }
 </script>
-<style>
-.listItemBottom {
-  bottom: 0；
-}
-</style>
