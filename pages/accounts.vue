@@ -20,24 +20,32 @@
           <v-col
             v-for="card in cards"
             :key="card.title"
-            :cols="card.flex"
+            cols="12"
+            sm="12"
+            md="6"
+            lg="6"
           >
             <v-card
               :href="card.href"
               link
               target="_blank"
             >
-              <v-img
-                :src="card.src"
-                class="white--text align-end"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="200px"
-              >
-                <v-card-title v-text="card.title" />
-              </v-img>
-              <v-card-text>
-                <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-              </v-card-text>
+              <div class="d-flex flex-no-wrap justify-space-between">
+                <div>
+                  <v-card-title
+                    v-text="card.title"
+                    class="headline"
+                  />
+                  <v-card-subtitle>subtitle</v-card-subtitle>
+                </div>
+                <v-avatar
+                  class="ma-3"
+                  size="125"
+                  tile
+                >
+                  <v-img :src="card.src" />
+                </v-avatar>
+              </div>
             </v-card>
           </v-col>
         </v-row>
@@ -53,49 +61,49 @@ export default {
       cards: [
         {
           title: 'GitHub',
-          src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+          src: '/itoaki.github.io/logos/octocat.png',
           href: 'https://github.com/itoaki',
           flex: 6
         },
         {
           title: 'GitLab',
-          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          src: '/itoaki.github.io/logos/gitlab.svg',
           href: 'https://gitlab.com/Itoaki',
           flex: 6
         },
         {
           title: 'はてなブログ',
-          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          src: '/itoaki.github.io/logos/hatenablog.svg',
           href: 'https://techstation.hatenablog.com/',
           flex: 6
         },
         {
           title: 'note',
-          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          src: '/itoaki.github.io/logos/note.svg',
           href: 'https://note.com/itoaki0417',
           flex: 6
         },
         {
           title: 'Qiita',
-          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          src: '/itoaki.github.io/logos/qiita.png',
           href: 'https://qiita.com/itoaki0417',
           flex: 6
         },
         {
           title: 'Twitter',
-          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          src: '/itoaki.github.io/logos/twitter.svg',
           href: 'https://twitter.com/itoaki0417',
           flex: 6
         },
         {
           title: 'Wantedly',
-          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          src: '/itoaki.github.io/logos/wantedly.svg',
           href: 'https://www.wantedly.com/users/127449944',
           flex: 6
         },
         {
           title: 'Linkedin',
-          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          src: '/itoaki.github.io/logos/linkedin.png',
           href: 'https://www.linkedin.com/in/akihiro-ito-042319116',
           flex: 6
         }
