@@ -76,8 +76,8 @@ export default {
         },
         {
           icon: 'mdi-account-heart',
-          title: 'Contact',
-          to: '/contact'
+          title: 'Accounts',
+          to: '/accounts'
         }
       ]
     }
