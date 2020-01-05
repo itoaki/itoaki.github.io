@@ -51,14 +51,54 @@ export default {
   data () {
     return {
       cards: [
-        { title: 'GitHub', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', href: 'https://github.com/itoaki', flex: 6 },
-        { title: 'GitLab', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', href: 'https://gitlab.com/Itoaki', flex: 6 },
-        { title: 'はてなブログ', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', href: 'https://techstation.hatenablog.com/', flex: 6 },
-        { title: 'note', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', href: 'https://note.com/itoaki0417', flex: 6 },
-        { title: 'Qiita', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', href: 'https://qiita.com/itoaki0417', flex: 6 },
-        { title: 'Twitter', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', href: 'https://twitter.com/itoaki0417', flex: 6 },
-        { title: 'Wantedly', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', href: 'https://www.wantedly.com/users/127449944', flex: 6 },
-        { title: 'Linkedin', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', href: 'https://www.linkedin.com/in/akihiro-ito-042319116', flex: 6 }
+        {
+          title: 'GitHub',
+          src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',
+          href: 'https://github.com/itoaki',
+          flex: 6
+        },
+        {
+          title: 'GitLab',
+          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          href: 'https://gitlab.com/Itoaki',
+          flex: 6
+        },
+        {
+          title: 'はてなブログ',
+          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          href: 'https://techstation.hatenablog.com/',
+          flex: 6
+        },
+        {
+          title: 'note',
+          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          href: 'https://note.com/itoaki0417',
+          flex: 6
+        },
+        {
+          title: 'Qiita',
+          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          href: 'https://qiita.com/itoaki0417',
+          flex: 6
+        },
+        {
+          title: 'Twitter',
+          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          href: 'https://twitter.com/itoaki0417',
+          flex: 6
+        },
+        {
+          title: 'Wantedly',
+          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          href: 'https://www.wantedly.com/users/127449944',
+          flex: 6
+        },
+        {
+          title: 'Linkedin',
+          src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg',
+          href: 'https://www.linkedin.com/in/akihiro-ito-042319116',
+          flex: 6
+        }
       ]
     }
   }
