@@ -14,11 +14,11 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/itoaki.github.io/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   router: {
-    base: '/itoaki.github.io/'
+    base: '/'
   },
   /*
   ** Customize the progress-bar color
