@@ -41,9 +41,21 @@
     <div class="block block-four">
       <div>
         <h2><span class="title_one">T</span>able of contents</h2>
-        <p>
-          ページへのリンクを貼る
-        </P>
+        <v-card
+          v-for="(content, i) in contents"
+          :key="i"
+          :to="content.to"
+          class="mx-auto"
+          max-width="400"
+        >
+          <v-img
+            :src="content.image"
+            class="white--text align-end"
+            height="150px"
+          >
+            <v-card-title>{{ content.title }}</v-card-title>
+          </v-img>
+        </v-card>
       </div>
     </div>
     <div class="block block-five">
@@ -62,6 +74,27 @@ export default {
   layout: 'top',
   components: {
     VueTyper
+  },
+  data () {
+    return {
+      contents: [
+        {
+          image: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+          title: 'Skill',
+          to: '/skill'
+        },
+        {
+          image: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+          title: 'Contents',
+          to: '/contents'
+        },
+        {
+          image: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+          title: 'Accounts',
+          to: '/accounts'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -123,7 +156,7 @@ p {
   z-index: 120;
 }
 .block-four {
-  background: #85937A;
+  background: #ffffff;
   z-index: 130;
 }
 .block-five {
