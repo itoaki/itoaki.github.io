@@ -18,16 +18,41 @@
       />
     </div>
     <div class="block block-two">
-      <p>Two</p>
+      <div>
+        <h2><span class="title_one">A</span>bout this site</h2>
+        <p>
+          このサイトは、<span class="inpact">圧倒的成長</span>と<span class="inpact">楽しく働くこと</span>を追求するいとあきのポートフォリオです。
+          普段のアウトプットや、アカウントなどをまとめて、私がどのようなエンジニアなのかなるべく詳細にわかるようなサイトを目指します。
+          興味を持っていただいた方は、公開しているアカウントよりコンタクトを取っていただけると転げ回って喜びます。
+        </P>
+        <p>
+          みなさまどうかごゆっくりしていってください。
+        </P>
+      </div>
     </div>
     <div class="block block-three">
-      <p>Three</p>
+      <div>
+        <h2><span class="title_one">P</span>rofile</h2>
+        <p>
+          プロフィールを記載する
+        </P>
+      </div>
     </div>
     <div class="block block-four">
-      <p>Four</p>
+      <div>
+        <h2><span class="title_one">T</span>able of contents</h2>
+        <p>
+          ページへのリンクを貼る
+        </P>
+      </div>
     </div>
     <div class="block block-five">
-      <p>Five</p>
+      <div>
+        <h2><span class="title_one">C</span>areer</h2>
+        <p>
+          経歴をはる
+        </P>
+      </div>
     </div>
   </div>
 </template>
@@ -51,13 +76,26 @@ export default {
   position: sticky;
   top: 0;
 }
-p {
-  display: inline-block;
+
+h2 {
   font-size: 60px;
-  font-family: 'Great Vibes', cursive;
-  padding: 0;
-  margin: 0;
 }
+
+p {
+  font-size: 30px;
+}
+
+.title_one {
+  font-size: 80px;
+  color:yellow;
+  font-weight: bold;
+}
+
+.inpact {
+  color:yellow;
+  font-weight: bold;
+}
+
 .block-one {
   background: #212E32;
   color: #ffffff;
@@ -67,33 +105,30 @@ p {
 .vue-typer .custom.char.typed {
   color: #ffffff;
 }
+
 .vue-typer .custom.caret {
   background-color: #ffffff;
 }
+
 .block-two {
-  background: #85937A;
-  z-index: 200;
-}
-.block-three {
-  background: #212E32;
-  color: #fff;
-  z-index: 300;
-}
-.block-four {
-  background: #85937A;
-  z-index: 400;
-}
-.block-five {
-  background: #212E32;
-  color: #fff;
-  z-index: 500;
-}
-/*
-.block-five {
   background: #85937A;
   background-image: url("/images/amanogawa.jpg");
   color: #ffffff;
   z-index: 110;
 }
-*/
+
+.block-three {
+  background: #212E32;
+  color: #fff;
+  z-index: 120;
+}
+.block-four {
+  background: #85937A;
+  z-index: 130;
+}
+.block-five {
+  background: #212E32;
+  color: #fff;
+  z-index: 140;
+}
 </style>
