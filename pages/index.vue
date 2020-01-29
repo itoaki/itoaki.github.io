@@ -1,92 +1,99 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          TOPペーーーーーーーーーじ！！！
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <div>
+    <div class="block block-one">
+      <vue-typer
+        :text="[
+          'Welcome to itoaki’s Portfolio!',
+          'いとあきのポートフォリオへようこそ！',
+          '欢迎来到伊藤彰的作品集！',
+          'Willkommen in Itoakis Portfolio!',
+          'Chào mừng đến với danh mục đầu tư của Itoaki!',
+          'Добро пожаловать в портфолио Itoaki!',
+        ]"
+        :pre-type-delay="300"
+        :erase-delay="70"
+        erase-style="backspace"
+        caret-animaton="smooth"
+        class="headline"
+      />
+    </div>
+    <div class="block block-two">
+      <p>Two</p>
+    </div>
+    <div class="block block-three">
+      <p>Three</p>
+    </div>
+    <div class="block block-four">
+      <p>Four</p>
+    </div>
+    <div class="block block-five">
+      <p>Five</p>
+    </div>
+  </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
+import { VueTyper } from 'vue-typer'
 export default {
+  layout: 'top',
   components: {
-    Logo,
-    VuetifyLogo
+    VueTyper
   }
 }
 </script>
+<style>
+.block {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+p {
+  display: inline-block;
+  font-size: 60px;
+  font-family: 'Great Vibes', cursive;
+  padding: 0;
+  margin: 0;
+}
+.block-one {
+  background: #212E32;
+  color: #ffffff;
+  z-index: 100;
+}
+
+.vue-typer .custom.char.typed {
+  color: #ffffff;
+}
+.vue-typer .custom.caret {
+  background-color: #ffffff;
+}
+.block-two {
+  background: #85937A;
+  z-index: 200;
+}
+.block-three {
+  background: #212E32;
+  color: #fff;
+  z-index: 300;
+}
+.block-four {
+  background: #85937A;
+  z-index: 400;
+}
+.block-five {
+  background: #212E32;
+  color: #fff;
+  z-index: 500;
+}
+/*
+.block-five {
+  background: #85937A;
+  background-image: url("/images/amanogawa.jpg");
+  color: #ffffff;
+  z-index: 110;
+}
+*/
+</style>
