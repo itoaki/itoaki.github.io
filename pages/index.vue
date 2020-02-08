@@ -14,33 +14,86 @@
         :erase-delay="70"
         erase-style="backspace"
         caret-animaton="smooth"
-        class="headline"
+        class="headline font-italic font-weight-medium"
       />
     </div>
     <div class="block block-two">
       <div>
-        <h2><span class="title_one">A</span>bout this site</h2>
-        <p>
+        <h2 class="display-3 font-weight-black">
+          <span class="inpact">A</span>bout this site
+        </h2>
+        <br>
+        <p class="headline font-weight-black">
           このサイトは、<span class="inpact">圧倒的成長</span>と<span class="inpact">楽しく働くこと</span>を追求するいとあきのポートフォリオです。
           普段のアウトプットや、アカウントなどをまとめて、私がどのようなエンジニアなのかなるべく詳細にわかるようなサイトを目指します。
           興味を持っていただいた方は、公開しているアカウントよりコンタクトを取っていただけると転げ回って喜びます。
         </P>
-        <p>
+        <p class="headline font-weight-black">
           みなさまどうかごゆっくりしていってください。
         </P>
       </div>
     </div>
     <div class="block block-three">
       <div>
-        <h2><span class="title_one">P</span>rofile</h2>
-        <p>
-          プロフィールを記載する
-        </P>
+        <h2 class="display-3 font-weight-black">
+          <span class="inpact">P</span>rofile
+        </h2>
+        <v-row justify="center">
+          <v-col
+            cols="12"
+            sm="10"
+            md="6"
+            lg="6"
+          >
+            <v-avatar
+              class="profile"
+              color="grey"
+              size="300"
+              tile
+            >
+              <v-img src="/images/profile.jpg" />
+            </v-avatar>
+          </v-col>
+          <v-col
+            cols="12"
+            sm="10"
+            md="6"
+            lg="6"
+          >
+            <v-simple-table
+              v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm"
+              dense
+            >
+              <template v-slot:default>
+                <tbody>
+                  <tr v-for="item in desserts" :key="item.name">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.value }}</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+            <v-simple-table
+              v-if="$vuetify.breakpoint.md || $vuetify.breakpoint.lg"
+            >
+              <template v-slot:default>
+                <tbody>
+                  <tr v-for="item in desserts" :key="item.name">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.value }}</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </v-col>
+        </v-row>
       </div>
     </div>
     <div class="block block-four">
       <div>
-        <h2><span class="title_one">T</span>able of contents</h2>
+        <h2 class="display-3 font-weight-black">
+          <span class="inpact">T</span>able of contents
+        </h2>
         <v-card
           v-for="(content, i) in contents"
           :key="i"
@@ -60,9 +113,11 @@
     </div>
     <div class="block block-five">
       <div>
-        <h2><span class="title_one">C</span>areer</h2>
+        <h2 class="display-3 font-weight-black">
+          <span class="inpact">C</span>areer
+        </h2>
         <p>
-          経歴をはる
+          作成中
         </P>
       </div>
     </div>
@@ -93,6 +148,32 @@ export default {
           title: 'Accounts',
           to: '/accounts'
         }
+      ],
+      desserts: [
+        {
+          name: 'Name：',
+          value: 'Ito Akihiro'
+        },
+        {
+          name: 'Birthday',
+          value: '1989/04/17 (Aries)'
+        },
+        {
+          name: 'Blood Type',
+          value: 'O型'
+        },
+        {
+          name: 'motto',
+          value: '困難の中に機会がある(アインシュタイン)'
+        },
+        {
+          name: 'respected',
+          value: '堀江 貴文、与沢 翼'
+        },
+        {
+          name: 'Hobby',
+          value: 'アマプラ、筋トレ、野球、時々サバゲー'
+        }
       ]
     }
   }
@@ -108,57 +189,36 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-}
-
-h2 {
-  font-size: 60px;
-}
-
-p {
-  font-size: 30px;
-}
-
-.title_one {
-  font-size: 80px;
-  color:yellow;
-  font-weight: bold;
+  background: #f5f5f5;
 }
 
 .inpact {
-  color:yellow;
+  color: #ffd700;
   font-weight: bold;
 }
 
 .block-one {
-  background: #212E32;
-  color: #ffffff;
   z-index: 100;
 }
 
-.vue-typer .custom.char.typed {
-  color: #ffffff;
-}
-
-.vue-typer .custom.caret {
-  background-color: #ffffff;
-}
-
 .block-two {
-  background: #85937A;
   background-image: url("/images/amanogawa.jpg");
   color: #ffffff;
   z-index: 110;
 }
 
 .block-three {
-  background: #212E32;
-  color: #fff;
+  background: #f5f5f5;
+  color: #808080;
   z-index: 120;
 }
+
 .block-four {
-  background: #ffffff;
+  background: #292961;
+  color: #808080;
   z-index: 130;
 }
+
 .block-five {
   background: #212E32;
   color: #fff;
