@@ -66,7 +66,7 @@
             >
               <template v-slot:default>
                 <tbody>
-                  <tr v-for="item in desserts" :key="item.name">
+                  <tr v-for="item in introduction" :key="item.name">
                     <td>{{ item.name }}</td>
                     <td>{{ item.value }}</td>
                   </tr>
@@ -78,7 +78,7 @@
             >
               <template v-slot:default>
                 <tbody>
-                  <tr v-for="item in desserts" :key="item.name">
+                  <tr v-for="item in introduction" :key="item.name">
                     <td>{{ item.name }}</td>
                     <td>{{ item.value }}</td>
                   </tr>
@@ -149,7 +149,7 @@ export default {
           to: '/accounts'
         }
       ],
-      desserts: [
+      introduction: [
         {
           name: 'Name：',
           value: 'Ito Akihiro'
