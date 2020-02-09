@@ -137,14 +137,34 @@
         </v-row>
       </div>
     </div>
-    <div class="block block-five">
+    <div class="block-five">
       <div>
         <h2 class="display-3 font-weight-black">
           <span class="inpact">C</span>areer
         </h2>
-        <p>
-          作成中
-        </P>
+        <v-timeline>
+          <v-timeline-item
+            v-for="(carrer, i) in carrers"
+            :key="i"
+            :color="carrer.color"
+            small
+          >
+            <template v-slot:opposite>
+              <span
+                :class="`headline font-weight-bold ${carrer.color}--text`"
+                v-text="carrer.year"
+              />
+            </template>
+            <div class="py-4">
+              <h2 :class="`headline font-weight-light mb-4 ${carrer.color}--text`">
+                {{ carrer.event }}
+              </h2>
+              <div>
+                {{ carrer.text }}
+              </div>
+            </div>
+          </v-timeline-item>
+        </v-timeline>
       </div>
     </div>
   </div>
@@ -171,14 +191,14 @@ export default {
           title: 'Contents',
           to: '/contents',
           subtitle: '今までの軌跡',
-          text: 'ページに収まりきらないほどのたくさんのものを作りたいっ♪s'
+          text: 'ページに収まりきらないほどのたくさんのものを作りたいっ♪'
         },
         {
           image: '/images/squere.jpg',
           title: 'Accounts',
           to: '/accounts',
           subtitle: '放置してたらすみません',
-          text: '気軽に絡んでくださいっ☆'
+          text: 'エンジニアの方も、そうじゃない方も、友達になれたら嬉しいです。気軽に絡んでくださいっ☆'
         }
       ],
       introduction: [
@@ -205,6 +225,38 @@ export default {
         {
           name: 'Hobby',
           value: 'アマプラ、筋トレ、野球、時々サバゲー'
+        }
+      ],
+      carrers: [
+        {
+          color: 'cyan',
+          year: '2012',
+          event: '大学卒業・就職',
+          text: '千葉県の理系大学を卒業しました。独立系SIerに就職してエンジニアデビューしました。'
+        },
+        {
+          color: 'green',
+          year: '2016/04',
+          event: '40億円ウォーターフォールプロジェクトに挑戦！',
+          text: '体力のある今のうちに経験しておこうと思い、部署移動を願い出てアサインされました。設計、開発、仕様変更対応、パフォーマンスチューニングなど様々な経験ができたのと、つよつよマネジメント層の仕事を間近で見て学ぶことができた。人生の思い出深いプロジェクトの1つ'
+        },
+        {
+          color: 'pink',
+          year: '2017/11',
+          event: 'サービス開発を始める',
+          text: '自社サービス開発をしている部署に移動しました。ここでは主にscrum開発、scrumマスター見習い、HRTech、1on1など、技術以外の部分で学ぶことが多かった。'
+        },
+        {
+          color: 'amber',
+          year: '2019/05',
+          event: '転職',
+          text: 'サービス開発が楽しすぎて、もっと色々な経験が積みたくなって、転職を決意。toCもできる、大規模サービスを提供している事業会社に転職しました。'
+        },
+        {
+          color: 'orange',
+          year: 'now / feature',
+          event: '今とこれから',
+          text: '今を楽しく生きてます。今後、どんな役割をになっていくか分からないけど、ずっと物作りに関わっていきたい。ずっとプログラムは書いていたいと思ってます。'
         }
       ]
     }
@@ -253,8 +305,16 @@ export default {
 }
 
 .block-five {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #f5f5f5;
   background: #212E32;
-  color: #fff;
+  color: #ffffff;
   z-index: 140;
 }
 </style>
