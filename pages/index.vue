@@ -94,21 +94,47 @@
         <h2 class="display-3 font-weight-black">
           <span class="inpact">T</span>able of contents
         </h2>
-        <v-card
-          v-for="(content, i) in contents"
-          :key="i"
-          :to="content.to"
-          class="mx-auto"
-          max-width="400"
-        >
-          <v-img
-            :src="content.image"
-            class="white--text align-end"
-            height="150px"
+        <v-spacer />
+        <v-row dense justify="center">
+          <v-col
+            v-for="(content, i) in contents"
+            :key="i"
+            cols="12"
+            sm="12"
+            md="4"
+            lg="4"
           >
-            <v-card-title>{{ content.title }}</v-card-title>
-          </v-img>
-        </v-card>
+            <v-card
+              :to="content.to"
+              class="mx-auto"
+              max-width="400"
+            >
+              <v-img
+                :src="content.image"
+                class="grey--text text--darken-3 align-end"
+                height="150px"
+              >
+                <v-card-title
+                  class="display-1 font-weight-bold"
+                >
+                  {{ content.title }}
+                </v-card-title>
+              </v-img>
+              <v-card-subtitle
+                v-if="$vuetify.breakpoint.md || $vuetify.breakpoint.lg"
+                class="pb-0"
+              >
+                {{ content.subtitle }}
+              </v-card-subtitle>
+              <v-card-text
+                v-if="$vuetify.breakpoint.md || $vuetify.breakpoint.lg"
+                class="text--primary"
+              >
+                <div>{{ content.text }}</div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
       </div>
     </div>
     <div class="block block-five">
@@ -134,19 +160,25 @@ export default {
     return {
       contents: [
         {
-          image: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+          image: '/images/triangle.jpg',
           title: 'Skill',
-          to: '/skill'
+          to: '/skill',
+          subtitle: '目指せフルスタック！',
+          text: 'ページがごちゃったときずいた時、また１つ違う景色が見えるはずっ！'
         },
         {
-          image: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+          image: '/images/circle.jpg',
           title: 'Contents',
-          to: '/contents'
+          to: '/contents',
+          subtitle: '今までの軌跡',
+          text: 'ページに収まりきらないほどのたくさんのものを作りたいっ♪s'
         },
         {
-          image: 'https://cdn.vuetifyjs.com/images/cards/docks.jpg',
+          image: '/images/squere.jpg',
           title: 'Accounts',
-          to: '/accounts'
+          to: '/accounts',
+          subtitle: '放置してたらすみません',
+          text: '気軽に絡んでくださいっ☆'
         }
       ],
       introduction: [
@@ -190,6 +222,7 @@ export default {
   position: sticky;
   top: 0;
   background: #f5f5f5;
+  color: #808080;
 }
 
 .inpact {
@@ -202,20 +235,20 @@ export default {
 }
 
 .block-two {
-  background-image: url("/images/amanogawa.jpg");
+  background-size: cover;
+  background-image: url("/images/background.jpg");
   color: #ffffff;
   z-index: 110;
 }
 
 .block-three {
   background: #f5f5f5;
-  color: #808080;
   z-index: 120;
 }
 
 .block-four {
-  background: #292961;
-  color: #808080;
+  background-size: cover;
+  background-image: url("/images/background2.png");
   z-index: 130;
 }
 
