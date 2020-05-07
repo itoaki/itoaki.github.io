@@ -1,54 +1,48 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-container>
-      <v-row dense justify="center">
-        <v-col
-          cols="12"
-          sm="10"
-          md="12"
-          lg="12"
+  <v-container>
+    <v-row dense justify="center">
+      <v-col
+        cols="12"
+        sm="10"
+        md="12"
+        lg="12"
+      >
+        <v-card color="#292961" dark>
+          <v-card-title>Account List</v-card-title>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row dense justify="center">
+      <v-col
+        v-for="card in cards"
+        :key="card.title"
+        cols="12"
+        sm="10"
+        md="6"
+        lg="6"
+      >
+        <v-card
+          :href="card.href"
+          link
+          target="_blank"
         >
-          <v-card color="#292961" dark>
-            <v-card-title>Account List</v-card-title>
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row dense justify="center">
-        <v-col
-          v-for="card in cards"
-          :key="card.title"
-          cols="12"
-          sm="10"
-          md="6"
-          lg="6"
-        >
-          <v-card
-            :href="card.href"
-            link
-            target="_blank"
-          >
-            <div class="d-flex flex-no-wrap justify-space-between">
-              <div>
-                <v-card-title v-text="card.title" />
-                <v-card-subtitle v-text="card.subtitle" />
-              </div>
-              <v-avatar
-                class="ma-3"
-                size="125"
-                tile
-              >
-                <v-img :src="card.src" contain />
-              </v-avatar>
+          <div class="d-flex flex-no-wrap justify-space-between">
+            <div>
+              <v-card-title v-text="card.title" />
+              <v-card-subtitle v-text="card.subtitle" />
             </div>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-layout>
+            <v-avatar
+              class="ma-3"
+              size="125"
+              tile
+            >
+              <v-img :src="card.src" contain />
+            </v-avatar>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

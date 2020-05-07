@@ -36,9 +36,7 @@
     </v-app-bar>
     <!-- content -->
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
     <!-- footer -->
     <v-footer

@@ -74,7 +74,7 @@
               </template>
             </v-simple-table>
             <v-simple-table
-              v-if="$vuetify.breakpoint.md || $vuetify.breakpoint.lg"
+              v-if="!($vuetify.breakpoint.xs || $vuetify.breakpoint.sm)"
             >
               <template v-slot:default>
                 <tbody>
@@ -127,7 +127,7 @@
                 {{ content.subtitle }}
               </v-card-subtitle>
               <v-card-text
-                v-if="$vuetify.breakpoint.md || $vuetify.breakpoint.lg"
+                v-if="!($vuetify.breakpoint.xs || $vuetify.breakpoint.sm)"
                 class="text--primary"
               >
                 <div>{{ content.text }}</div>
@@ -306,6 +306,7 @@ export default {
 
 .block-five {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
